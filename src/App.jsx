@@ -8,24 +8,29 @@ import { useState } from "react";
 import Location from "./Components/Location";
 
 const API_KEY = "bc259847daf343adbaf125138241604";
-const URL = "http://api.weatherapi.com/v1/current.json";
 
 function App() {
-  const [search, setSearch] = useState("london");
+  const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
   const [init, setInit] = useState({
     name: "Madrid",
     condition: "light rains",
     temp: 31,
   });
+  const [current, setCurrent] = useState("london");
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+    setCurrent(search);
+  };
+  const URL = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${current}`;
 
   useEffect(() => {
-    fetch(`${URL}?key=${API_KEY}&q=${search}`)
+    fetch(`${URL}`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
       });
-  }, [init]);
+  }, [current]);
 
   const handleUpdate = () => {
     setInit((prev) => {
@@ -34,18 +39,16 @@ function App() {
         name: data.location.name,
         condition: data.current.condition.text,
         temp: data.current.temp_c,
+        img: data.current.condition.icon,
+        time: new Date().getFullYear(),
       };
     });
-    console.log(init);
   };
 
   // handleUpdate();
   return (
     <>
-      <Header
-        onChange={(e) => setSearch(e.target.value)}
-        onClick={handleUpdate}
-      />
+      <Header onChange={handleChange} onClick={handleUpdate} value={search} />
       <aside>
         <SideBar />
       </aside>

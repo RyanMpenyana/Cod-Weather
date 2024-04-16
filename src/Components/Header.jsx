@@ -1,4 +1,4 @@
-const Header = ({ onChange, onClick }) => {
+const Header = ({ onChange, onClick, value }) => {
   return (
     <>
       <header>
@@ -9,6 +9,7 @@ const Header = ({ onChange, onClick }) => {
             name="search"
             id="search_bar"
             placeholder="Search for cities"
+            value={value}
             onChange={onChange}
           />
           <button onClick={onClick}>click</button>

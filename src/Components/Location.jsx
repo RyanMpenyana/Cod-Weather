@@ -6,8 +6,9 @@ function Location({ location }) {
       <h3>{location.time}</h3>
       <h1>{location.name}</h1>
       <div style={{ display: "flex" }}>
-        <p>{location.condition}:</p>
-        <img src={location.img} alt="photo" />
+        <p>
+          {location.condition}: <img src={location.img} alt="photo" />
+        </p>
       </div>
       <h3>{location.temp}</h3>
     </div>

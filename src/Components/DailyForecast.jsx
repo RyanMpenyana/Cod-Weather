@@ -1,9 +1,9 @@
 const DailyForecast = (props) => {
   return (
     <div style={{ display: "grid" }}>
-      <p>06:00AM</p>
-      <img src="#" alt="icon" />
-      <h3>30*</h3>
+      <p>{props.day}</p>
+      <img src={props.icon} alt="icon" />
+      <h3>{props.temp}</h3>
     </div>
   );
 };

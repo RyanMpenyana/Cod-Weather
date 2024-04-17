@@ -10,29 +10,34 @@ import Location from "./Components/Location";
 const API_KEY = "bc259847daf343adbaf125138241604";
 
 function App() {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("london");
   const [data, setData] = useState([]);
   const [init, setInit] = useState({
     name: "Madrid",
     condition: "light rains",
     temp: 31,
   });
-  const [current, setCurrent] = useState("london");
+  const [forecasting, setForecasting] = useState([]);
+
   const handleChange = (e) => {
     setSearch(e.target.value);
-    setCurrent(search);
   };
-  const URL = `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${current}`;
+  const URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}`;
 
   useEffect(() => {
-    fetch(`${URL}`)
+    const location = LocatorFn(encodeURIComponent(search));
+    fetch(`${URL}&q=${location}&days=5`)
       .then((res) => res.json())
+      .catch((Error) => {
+        console.log(Error);
+      })
       .then((data) => {
         setData(data);
       });
-  }, [current]);
+  }, [search]);
 
   const handleUpdate = () => {
+    setForecasting(data.forecast.forecastday);
     setInit((prev) => {
       return {
         ...prev,
@@ -45,20 +50,32 @@ function App() {
     });
   };
 
-  // handleUpdate();
+  const LocatorFn = (locate) => {
+    return locate;
+  };
+
   return (
     <>
-      <Header onChange={handleChange} onClick={handleUpdate} value={search} />
+      <Header onChange={handleChange} onClick={handleUpdate} />
       <aside>
         <SideBar />
       </aside>
       <main>
-        <Location location={init} />
+        <Card>
+          <Location location={init} />
+        </Card>
 
         <Card>
-          <DailyForecast />
-          <DailyForecast />
-          <DailyForecast />
+          {forecasting
+            ? forecasting.map((item, index) => (
+                <DailyForecast
+                  key={index}
+                  day={item.day.condition.text}
+                  icon={item.day.condition.icon}
+                  temp={item.day.maxtemp_c}
+                />
+              ))
+            : "loading"}
         </Card>
       </main>
     </>

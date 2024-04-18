@@ -1,0 +1,41 @@
+.card {
+  background: url(./assets/bg.jpg) center center no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: grid;
+}
+.forecast_days {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  margin: 10px;
+}
+.forecast_card {
+  background-color: rgba(12, 82, 180, 0.2);
+  backdrop-filter: blur(10px);
+  margin: 5px;
+  padding: 20px;
+  display: grid;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  border-radius: 5%;
+}
+.current {
+  padding: 20px 30%;
+}
+
+@media (max-width: 600px) {
+  .forecast_days {
+    display: flex;
+    flex-direction: column;
+    /* height: auto; */
+  }
+  .card {
+    height: auto;
+  }
+  .current {
+    height: 300px;
+    align-content: center;
+    color: #f2f2f2;
+  }
+}

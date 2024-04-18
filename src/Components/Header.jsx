@@ -5,7 +5,7 @@ const Header = ({ onChange, onClick, value }) => {
         <nav>
           <img src="" alt="logo" />
           <input
-            type="search"
+            type="text"
             name="search"
             id="search_bar"
             placeholder="Search for cities"

@@ -2,7 +2,7 @@ import React from "react";
 
 function Location({ location }) {
   return (
-    <div>
+    <div className="current">
       <h3>{location.time}</h3>
       <h1>{location.name}</h1>
       <div style={{ display: "flex" }}>

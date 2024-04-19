@@ -44,6 +44,7 @@ function App() {
             setSearch(e.target.value);
           }}
           value={search}
+          onClick={handleUpdate}
           onSubmit={handleUpdate}
         />
         <Location location={init} />

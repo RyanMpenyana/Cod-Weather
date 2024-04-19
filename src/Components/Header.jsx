@@ -14,7 +14,7 @@ const Header = ({ onChange, onClick, value, onSubmit }) => {
               value={value}
               onChange={onChange}
             />
-            <button className="search_btn" onClick={onClick}>
+            <button className="search_btn" type="submit" onClick={onClick}>
               click
             </button>
           </form>

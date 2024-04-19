@@ -6,7 +6,7 @@ import { useState } from "react";
 import Location from "./Components/Location";
 
 const API_KEY = "bc259847daf343adbaf125138241604";
-const CURRENT = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}`;
+const CURRENT = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}`;
 
 function App() {
   const [search, setSearch] = useState("");

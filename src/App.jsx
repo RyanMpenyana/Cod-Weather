@@ -17,7 +17,8 @@ function App() {
   });
   const [forecasting, setForecasting] = useState([]);
 
-  const handleUpdate = async () => {
+  const handleUpdate = async (e) => {
+    e.preventDefault();
     const res = await fetch(`${CURRENT}&q=${search}&days=4`);
     const req = await res.json();
     setForecasting(req.forecast.forecastday);
@@ -42,8 +43,8 @@ function App() {
           onChange={(e) => {
             setSearch(e.target.value);
           }}
-          onClick={() => handleUpdate()}
           value={search}
+          onSubmit={handleUpdate}
         />
         <Location location={init} />
 

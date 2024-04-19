@@ -1,10 +1,10 @@
-const Header = ({ onChange, onClick, value }) => {
+const Header = ({ onChange, onClick, value, onSubmit }) => {
   return (
     <>
       <header>
         <nav>
           {/* <img src="" alt="logo" /> */}
-          <div style={{ textAlign: "center" }}>
+          <form onSubmit={onSubmit} style={{ textAlign: "center" }}>
             <input
               className="input"
               type="text"
@@ -17,7 +17,7 @@ const Header = ({ onChange, onClick, value }) => {
             <button className="search_btn" onClick={onClick}>
               click
             </button>
-          </div>
+          </form>
         </nav>
       </header>
     </>

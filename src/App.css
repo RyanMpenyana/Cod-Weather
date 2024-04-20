@@ -41,20 +41,10 @@
 }
 
 @media (max-width: 600px) {
-  /* .card {
-    background: url(./assets/bg.jpg) center center no-repeat;
-    background-size: cover;
-    height: 100%;
-    display: grid;
-    width: 100%;
-    font-family: "Great Vibes";
-    font-style: oblique;
-    font-weight: 400;
-    text-transform: capitalize;
-    justify-content: center;
+  .card {
     color: rgba(0, 0, 0, 0.699);
     padding: 20px;
-  } */
+  }
   .forecast_days {
     display: grid;
     grid-template-columns: repeat(2, auto);
@@ -66,6 +56,7 @@
     background-color: rgba(12, 82, 180, 0.2);
     backdrop-filter: blur(10px);
     width: auto;
+    max-height: 150px;
     margin: 5px;
     padding: 20px;
     display: grid;
@@ -74,12 +65,39 @@
     border-radius: 5%;
   }
   .current {
-    padding: 20px 30%;
+    padding: 10px 20%;
     text-align: center;
     font-size: 1.3em;
   }
   .current > h1 {
-    font-size: 1.2rem;
+    font-size: 2rem;
+  }
+  .input {
+    padding: 10px 1.5%;
+    backdrop-filter: blur(2px);
+    background-color: rgba(202, 202, 202, 0.404);
+    outline: none;
+    border-radius: 20px;
+    border: none;
+  }
+  .input_form {
+    text-align: center;
+    display: flex;
+    grid-template-columns: repeat(2, auto);
+    align-content: center;
+    /* height: 40px; */
+    width: 100%;
+  }
+  .input {
+    height: 30px;
+    backdrop-filter: blur(2px);
+    background-color: rgba(202, 202, 202, 0.404);
+    outline: none;
+    border-radius: 20px;
+    border: none;
+  }
+  .search_btn {
+    display: none;
   }
 }
 

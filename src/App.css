@@ -46,7 +46,7 @@
     grid-template-rows: auto;
   }
   .card {
-    max-height: 1200px auto;
+    height: 100%;
     padding-top: 20px;
     width: 100%;
     padding: 25px;

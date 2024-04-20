@@ -46,10 +46,7 @@
     grid-template-rows: auto;
   }
   .card {
-    height: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
+    max-height: 1200px;
     padding-top: 20px;
     width: 100%;
     padding: 25px;
@@ -71,6 +68,9 @@
   }
   .input {
     width: auto;
+  }
+  .search_btn {
+    display: none;
   }
 }
 @media (max-width: 730px) {

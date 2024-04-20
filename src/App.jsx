@@ -37,7 +37,6 @@ function App() {
     e.preventDefault();
     const res = await fetch(`${CURRENT}&q=${search}&days=4`);
     const req = await res.json();
-    console.log(req);
     setForecasting(req.forecast.forecastday);
     setInit((prev) => {
       return {

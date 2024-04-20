@@ -17,6 +17,7 @@
   grid-template-columns: repeat(5, auto);
   margin: 10px;
   width: 100%;
+  height: 100%;
 }
 .forecast_card {
   background-color: rgba(12, 82, 180, 0.2);
@@ -40,46 +41,56 @@
 }
 
 @media (max-width: 600px) {
+  /* .card {
+    background: url(./assets/bg.jpg) center center no-repeat;
+    background-size: cover;
+    height: 100%;
+    display: grid;
+    width: 100%;
+    font-family: "Great Vibes";
+    font-style: oblique;
+    font-weight: 400;
+    text-transform: capitalize;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.699);
+    padding: 20px;
+  } */
   .forecast_days {
     display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-template-rows: auto;
-  }
-  .card {
-    height: 100%;
-    padding-top: 20px;
+    margin: auto;
     width: 100%;
-    padding: 25px;
-  }
-  .current {
-    height: 300px;
-    align-content: center;
-    justify-content: center;
-    color: #f2f2f2;
-    text-align: center;
-  }
-  .current > h1 {
-    font-size: 1.5em;
+    height: 100%;
   }
   .forecast_card {
-    border-radius: 20px;
+    background-color: rgba(12, 82, 180, 0.2);
+    backdrop-filter: blur(10px);
     width: auto;
-    font-size: small;
+    margin: 5px;
+    padding: 20px;
+    display: grid;
+    /* align-content: center; */
+    text-align: center;
+    border-radius: 5%;
   }
-  .input {
-    width: auto;
+  .current {
+    padding: 20px 30%;
+    text-align: center;
+    font-size: 1.3em;
   }
-  .search_btn {
-    display: none;
+  .current > h1 {
+    font-size: 1.2rem;
   }
 }
+
+/*
 @media (max-width: 730px) {
   .forecast_days {
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-template-rows: auto;
   }
-}
+} */
 .input {
   width: 350px;
   padding: 10px 1.5%;

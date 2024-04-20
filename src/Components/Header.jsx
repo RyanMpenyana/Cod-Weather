@@ -1,10 +1,9 @@
-import SearchIcon from "../assets/search.png";
+import SearchIcon from "../assets/search.svg";
 const Header = ({ onChange, onClick, value, onSubmit }) => {
   return (
     <>
       <header>
         <nav>
-          {/* <img src="" alt="logo" /> */}
           <form onSubmit={onSubmit} className="input_form">
             <input
               className="input"
@@ -16,7 +15,7 @@ const Header = ({ onChange, onClick, value, onSubmit }) => {
               onChange={onChange}
             />
             <button className="search_btn" type="submit" onClick={onClick}>
-              <img src={SearchIcon} width={20} height={20} />
+              <img src={SearchIcon} width={20} height={""} />
             </button>
           </form>
         </nav>

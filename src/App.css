@@ -10,6 +10,7 @@
   text-transform: capitalize;
   justify-content: center;
   color: rgba(0, 0, 0, 0.699);
+  padding: 20px;
 }
 .forecast_days {
   display: grid;
@@ -45,14 +46,18 @@
     grid-template-rows: auto;
   }
   .card {
-    height: auto;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
     padding-top: 20px;
     width: 100%;
-    padding: 20px;
+    padding: 25px;
   }
   .current {
     height: 300px;
-    /* align-content: center; */
+    align-content: center;
+    justify-content: center;
     color: #f2f2f2;
     text-align: center;
   }
@@ -63,6 +68,9 @@
     border-radius: 20px;
     width: auto;
     font-size: small;
+  }
+  .input {
+    width: auto;
   }
 }
 @media (max-width: 730px) {
@@ -80,6 +88,9 @@
   outline: none;
   border-radius: 20px;
   border: none;
+}
+.input_form {
+  text-align: center;
 }
 .search_btn {
   padding: 0.4%;

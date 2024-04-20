@@ -4,7 +4,7 @@ const Header = ({ onChange, onClick, value, onSubmit }) => {
       <header>
         <nav>
           {/* <img src="" alt="logo" /> */}
-          <form onSubmit={onSubmit} style={{ textAlign: "center" }}>
+          <form onSubmit={onSubmit} className="input_form">
             <input
               className="input"
               type="text"

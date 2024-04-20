@@ -21,7 +21,9 @@ const DailyForecast = (props) => {
         <p>
           <img src={props.icon} alt="icon" />
         </p>
-        <h3>{props.temp}</h3>
+        <h3>
+          {props.temp} <sup>&#8451;</sup>
+        </h3>
       </div>
     </>
   );

@@ -3,8 +3,8 @@ import React from "react";
 function Location({ location }) {
   return (
     <div className="current">
-      <h1>{location.date}</h1>
-      <h3>{location.time}</h3>
+      <h2>{location.date}</h2>
+      {/* <h4>{location.time}</h4> */}
       <h1>{location.name}</h1>
       <p>{location.region}</p>
       <h4>{location.country}</h4>
@@ -12,7 +12,9 @@ function Location({ location }) {
         <img src={location.img} alt="photo" />
       </span>
       <h2>{location.condition}:</h2>
-      <h3>{location.temp}</h3>
+      <h3>
+        {location.temp} <sup>&#8451;</sup>
+      </h3>
     </div>
   );
 }

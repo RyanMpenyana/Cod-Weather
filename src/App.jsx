@@ -56,30 +56,28 @@ function App() {
 
   return (
     <>
-      <Card>
-        <Header
-          onChange={(e) => {
-            setSearch(e.target.value);
-          }}
-          value={search}
-          onClick={handleUpdate}
-          onSubmit={handleUpdate}
-        />
-        <Location location={init} />
+      <Header
+        onChange={(e) => {
+          setSearch(e.target.value);
+        }}
+        value={search}
+        onClick={handleUpdate}
+        onSubmit={handleUpdate}
+      />
+      <Location location={init} />
 
-        <div className="forecast_days">
-          {forecasting
-            ? forecasting.map((item, index) => (
-                <DailyForecast
-                  key={index}
-                  day={item.date}
-                  icon={item.day.condition.icon}
-                  temp={item.day.maxtemp_c}
-                />
-              ))
-            : "loading"}
-        </div>
-      </Card>
+      <div className="forecast_days">
+        {forecasting
+          ? forecasting.map((item, index) => (
+              <DailyForecast
+                key={index}
+                day={item.date}
+                icon={item.day.condition.icon}
+                temp={item.day.maxtemp_c}
+              />
+            ))
+          : "loading"}
+      </div>
     </>
   );
 }

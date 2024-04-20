@@ -12,19 +12,27 @@
   color: rgba(0, 0, 0, 0.699);
   padding: 20px;
 }
+#root {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  background-color: #0d0d0d;
+  color: #f2f2f2;
+  background-size: cover;
+  padding: 20px;
+  font-style: oblique;
+}
 .forecast_days {
   display: grid;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(4, 1fr);
   margin: 10px;
-  width: 100%;
-  height: 100%;
 }
 .forecast_card {
-  background-color: rgba(12, 82, 180, 0.2);
+  /* background-color: rgba(12, 82, 180, 0.2); */
+  color: #010221;
+  background-color: #f2f2f2;
   backdrop-filter: blur(10px);
-  width: 400px;
   margin: 5px;
-  padding: 20px;
   display: grid;
   align-items: center;
   align-content: center;
@@ -32,70 +40,10 @@
   border-radius: 5%;
 }
 .current {
-  padding: 20px 30%;
   text-align: center;
   font-size: 1.3em;
 }
-.current > h1 {
-  font-size: 3rem;
-}
-
-@media (max-width: 680px) {
-  .card {
-    color: rgb(255, 255, 255);
-    padding: 25px;
-  }
-  .forecast_days {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    margin: auto;
-    height: 100%;
-    padding: 25px;
-  }
-  .forecast_card {
-    background-color: rgba(12, 82, 180, 0.2);
-    backdrop-filter: blur(10px);
-    width: auto;
-    display: grid;
-    text-align: center;
-    border-radius: 5%;
-  }
-  .current {
-    padding: 10px 20%;
-    text-align: center;
-    font-size: 1em;
-    font-weight: 600;
-  }
-  .current > h1 {
-    font-size: 2em;
-    margin: 5px;
-    font-weight: 700;
-  }
-  .current > h2 {
-    font-size: 1em;
-  }
-
-  .input_form {
-    text-align: center;
-    display: flex;
-    grid-template-columns: repeat(2, auto);
-    align-content: center;
-    padding: 0 50px;
-  }
-  .input {
-    backdrop-filter: blur(2px);
-    background-color: rgba(202, 202, 202, 0.404);
-    outline: none;
-    border-radius: 20px;
-    border: none;
-  }
-  .search_btn {
-    display: none;
-  }
-}
-
 .input {
-  width: 350px;
   padding: 10px 1.5%;
   backdrop-filter: blur(2px);
   background-color: rgba(202, 202, 202, 0.404);
@@ -116,9 +64,77 @@
   outline: none;
   border: none;
 }
+.search_btn:hover {
+  background-color: #594636;
+}
 .card_day {
   font-size: 2em;
 }
-span {
-  content: "\2103";
+
+/* MEDIA QUERIES */
+
+@media (max-width: 680px) {
+  #root {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    color: #97a0a6;
+  }
+  .forecast_days {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .forecast_card {
+    background-color: rgba(12, 82, 180, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding: 10px;
+  }
+  .current {
+    padding: 10px 20%;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 600;
+  }
+  .current > h1 {
+    font-size: 2em;
+    margin: 5px;
+    font-weight: 700;
+    color: #455059;
+  }
+  .current > h2 {
+    font-size: 1em;
+  }
+  .input {
+    width: 100%;
+  }
+  .search_btn {
+    display: none;
+  }
+  .card_day {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 360px) {
+  #root {
+    padding: 20px;
+    background-color: #0d0d0d;
+    color: #f2f2f2;
+  }
+  .input_form {
+    width: 100%;
+    margin-top: 20px;
+    padding: 0 50px;
+  }
+  .input {
+    width: 100%;
+    padding: 8px 16px;
+  }
+  .forecast_days {
+    width: 100%;
+  }
+  .forecast_card {
+    background-color: #f2f2f2;
+    color: #010221;
+  }
 }

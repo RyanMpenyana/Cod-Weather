@@ -1,17 +1,3 @@
-.card {
-  background: url(./assets/bg.jpg) center center no-repeat;
-  background-size: cover;
-  height: 100vh;
-  display: grid;
-  width: 100%;
-  font-family: "Great Vibes";
-  font-style: oblique;
-  font-weight: 400;
-  text-transform: capitalize;
-  justify-content: center;
-  color: rgba(0, 0, 0, 0.699);
-  padding: 20px;
-}
 #root {
   height: 100vh;
   width: 100%;
@@ -20,6 +6,7 @@
   color: #f2f2f2;
   background-size: cover;
   padding: 20px;
+  font-weight: 800;
   font-style: oblique;
 }
 .forecast_days {
@@ -44,6 +31,17 @@
 .current {
   text-align: center;
   font-size: 1.3em;
+}
+.current > h1,
+h4 {
+  color: #455059;
+  letter-spacing: 5px;
+}
+.current > p {
+  font-size: 0.8em;
+  font-weight: 400;
+  color: #f2f2f2;
+  padding: 5px;
 }
 .input {
   padding: 10px 1.5%;
@@ -126,6 +124,7 @@
     padding: 20px;
     background-color: #0d0d0d;
     color: #f2f2f2;
+    font-weight: 700;
   }
   .input_form {
     width: 100%;
@@ -143,7 +142,9 @@
     background-color: #f2f2f2;
     color: #010221;
   }
-  .current > h1 {
+  .current > h1,
+  h4 {
     margin: 0;
+    letter-spacing: 2px;
   }
 }
